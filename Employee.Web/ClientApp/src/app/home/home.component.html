@@ -1,0 +1,40 @@
+<h5>Employees</h5>
+
+<p *ngIf="!employees"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="employees">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Salary (hour)</th>
+      <th>Salary (Month)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.roleName }}</td>
+      <td>{{ employee.hourlySalary }}</td>
+      <td>{{ employee.monthlySalary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <table>
+    <tr>
+      <td><input placeholder="Employee Id" class="input-group" type="number" id="txtIdEmployee" [(ngModel)]="employeeId" /></td>
+      <td><button class='btn btn-primary' (click)="getEmployee($event)">Total</button></td>
+    </tr>
+  </table>
+
+  <div *ngIf="oneEmployee">
+    <br />
+    <p>Name: <strong> {{ oneEmployee.name }}</strong></p>
+    <p *ngIf="oneEmployee.hourlySalary">Hourly Salary Employees the Annual Salary: <strong> {{ 120 * oneEmployee.hourlySalary * 12 | currency }}</strong></p>
+    <p *ngIf="oneEmployee.monthlySalary">Monthly Salary Employees the Annual Salary: <strong> {{ oneEmployee.monthlySalary * 12 | currency }}</strong></p>
+  </div>
+</div>
