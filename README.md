@@ -1,3 +1,7 @@
+# Deploy soluition
+
+This project is deployment [here](https://ryepes.azurewebsites.net)
+
 # Employee.Web
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
